@@ -1,0 +1,81 @@
+.wallet {
+    display: flex;
+    flex-direction: column;
+    grid-area: wallet;
+    position: relative;
+    z-index: 2;
+}
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mixins.fluid(margin-bottom, 38px, 12px, 390px, 1600px);
+}
+.button {
+    font-weight: 600;
+    font-size: 12px;
+    padding: 9px 16px;
+    border-radius: 20px;
+    gap: 8px;
+}
+.title {
+    font-weight: 500;
+
+    @include mixins.fluid(font-size, 20px, 16px, 390px, 1600px);
+    @include mixins.fluid(line-height, 30px, 24px, 390px, 1600px);
+}
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 8px;
+}
+.dropdown {
+    width: calc(100% - 54px);
+
+    & [class='option'],
+    & [class='value'] {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-wrap: nowrap;
+    }
+}
+.copy {
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.tooltipContainer {
+    position: relative;
+
+    &:hover .tooltip {
+        visibility: visible;
+    }
+}
+
+.tooltip {
+    display: flex;
+    position: absolute;
+    bottom: 55px;
+    text-wrap: nowrap;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.2s ease-in-out;
+    visibility: hidden;
+
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 10px;
+    border-radius: 8px;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: rgba(255, 255, 255, 0.08) transparent transparent transparent;
+    }
+}

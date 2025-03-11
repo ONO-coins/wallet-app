@@ -1,0 +1,25 @@
+.layout {
+    max-height: 100vh;
+    max-width: 100vw;
+    overflow: auto;
+    // overflow: hidden;
+    flex: 1 1 auto;
+    display: flex;
+    background: url('/img/dashboard-bg.webp') center/cover no-repeat;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    @media (max-width: 768px) {
+        background: url('/img/dashboard-bg-mob.webp') center/cover no-repeat;
+    }
+}
+.section {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(250px);
+    background: rgba(26, 26, 26, 0.38);
+
+    @include mixins.fluid(padding, 24px, 16px, 390px, 1600px);
+    @include mixins.fluid(border-radius, 16px, 12px, 390px, 1600px);
+}

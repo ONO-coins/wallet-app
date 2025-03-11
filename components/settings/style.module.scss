@@ -1,0 +1,189 @@
+.settings {
+    display: flex;
+    flex-direction: column;
+    @include mixins.fluid(gap, 32px, 16px, 390px, 1600px);
+}
+.top {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+    }
+}
+.avatar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    label {
+        position: relative;
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid rgba(30, 30, 30, 0.08);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.08);
+    }
+}
+.avatarText {
+    font-size: 14px;
+    line-height: 21px;
+    display: none;
+
+    @media (max-width: 768px) {
+        display: block;
+    }
+}
+.avatarImage {
+    @include mixins.fluid(max-width, 119px, 60px, 390px, 1600px);
+    @include mixins.fluid(max-height, 119px, 60px, 390px, 1600px);
+}
+.avatarUpload {
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #797979;
+}
+.avatarUploadIcon {
+    width: 16px;
+    height: 16px;
+}
+.info {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+}
+.title {
+    font-weight: 500;
+    @include mixins.fluid(font-size, 20px, 16px, 390px, 1600px);
+    @include mixins.fluid(line-height, 30px, 24px, 390px, 1600px);
+}
+.fields {
+    display: flex;
+    @include mixins.fluid(gap, 24px, 12px, 390px, 1600px);
+
+    @media (max-width: 1200px) {
+        flex-wrap: wrap;
+    }
+}
+.field {
+    width: 100%;
+    label {
+        font-size: 14px;
+        line-height: 19px;
+        @include mixins.fluid(margin-bottom, 10px, 8px, 390px, 1600px);
+    }
+    input {
+        padding: 16px 12px;
+        font-size: 14px;
+        line-height: 19px;
+    }
+}
+.button {
+    width: 100%;
+
+    button {
+        justify-content: center;
+        height: 100%;
+    }
+}
+.bottom {
+    display: flex;
+    flex-direction: column;
+    @include mixins.fluid(gap, 32px, 16px, 390px, 1600px);
+}
+.block {
+    display: flex;
+    flex-direction: column;
+}
+.blockTitle {
+    font-weight: 500;
+
+    @include mixins.fluid(margin-bottom, 16px, 12px, 390px, 1600px);
+    @include mixins.fluid(font-size, 20px, 16px, 390px, 1600px);
+    @include mixins.fluid(line-height, 30px, 24px, 390px, 1600px);
+}
+.sections {
+    display: flex;
+    @include mixins.fluid(gap, 24px, 12px, 390px, 1600px);
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+.section {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.03);
+
+    width: 100%;
+    max-width: 49.25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mixins.fluid(padding, 20px, 12px, 390px, 1600px);
+    @include mixins.fluid(gap, 12px, 16px, 390px, 1600px);
+
+    @media (max-width: 1420px) {
+        max-width: 100%;
+    }
+
+    @media (max-width: 640px) {
+        &.wrap {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+}
+.sectionTitle {
+    font-weight: 500;
+
+    @include mixins.fluid(margin-bottom, 12px, 4px, 390px, 1600px);
+    @include mixins.fluid(font-size, 16px, 14px, 390px, 1600px);
+    @include mixins.fluid(line-height, 24px, 21px, 390px, 1600px);
+}
+.sectionDesc {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: rgba(255, 255, 255, 0.6);
+}
+.sectionRight {
+    flex: 1 1 auto;
+}
+.sectionButton {
+    width: 100%;
+    max-width: 240px;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 19px;
+    max-height: 53px;
+
+    @media (max-width: 640px) {
+        max-width: 100%;
+    }
+}
+
+.inputButton {
+    margin-top: 27px;
+
+    @media (max-width: 1200px) {
+        margin-top: 0;
+    }
+}
+
+.deleteButton {
+    color: red;
+}

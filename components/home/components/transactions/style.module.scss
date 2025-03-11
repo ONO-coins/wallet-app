@@ -1,0 +1,130 @@
+.transactions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    grid-area: transactions;
+}
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+.title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+}
+.tabs {
+    display: flex;
+    gap: 12px;
+}
+.tab {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+
+    @include mixins.fluid(font-size, 16px, 14px, 390px, 1600px);
+    @include mixins.fluid(line-height, 24px, 21px, 390px, 1600px);
+
+    &.active {
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: var(--orange);
+    }
+
+    @media (any-hover: hover) {
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        &:hover {
+            color: var(--orange);
+        }
+    }
+}
+.listContainer {
+    display: flex;
+    justify-content: space-between;
+
+    flex-direction: column;
+    height: 100%;
+}
+.list {
+    display: flex;
+    flex-direction: column;
+
+    @include mixins.fluid(margin-bottom, 37px, 16px, 390px, 1600px);
+}
+.item {
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+
+    &:last-child {
+        border-bottom: 0;
+    }
+}
+.itemLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.itemTime {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+}
+.itemKey {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: rgba(255, 255, 255, 0.5);
+    word-break: break-all;
+}
+.direction {
+    border-radius: 36px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &.fall {
+        background: rgba(230, 49, 49, 0.2);
+        color: var(--red);
+    }
+    &.grow {
+        background: rgba(50, 229, 59, 0.2);
+        color: var(--green);
+    }
+}
+.directionValue {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    white-space: nowrap;
+}
+.button {
+    padding: 14.5px 24px;
+    width: 100%;
+    max-width: 256px;
+    font-weight: 600;
+    font-size: 14px;
+    justify-content: center;
+
+    @media (any-hover: hover) {
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        &:hover {
+            background-color: var(--orange);
+            border-color: var(--orange);
+            color: var(--white);
+        }
+    }
+}
+.centered {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}

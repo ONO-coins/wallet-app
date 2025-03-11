@@ -1,0 +1,144 @@
+.main {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    // overflow: hidden;
+    overflow: auto;
+
+    @media (hover: hover) {
+        &::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 20px;
+            background-color: var(--orange);
+        }
+    }
+}
+.container {
+    height: 100%;
+    @include mixins.fluid(padding-left, 40px, 16px, 390px, 1600px);
+    @include mixins.fluid(padding-right, 40px, 16px, 390px, 1600px);
+}
+.header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.headerBody {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 19px 0;
+    position: relative;
+}
+.title {
+    font-weight: 600;
+    font-size: 28px;
+
+    @media (max-width: 1080px) {
+        display: none;
+    }
+}
+.titleMob {
+    display: block;
+    margin-top: 20px;
+
+    @include mixins.fluid(padding-left, 40px, 16px, 390px, 1600px);
+    @include mixins.fluid(padding-right, 40px, 16px, 390px, 1600px);
+
+    @media (min-width: 1080px) {
+        display: none;
+    }
+}
+.buttonNotf {
+    color: var(--white);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mixins.fluid(width, 48px, 40px, 390px, 1600px);
+    @include mixins.fluid(height, 48px, 40px, 390px, 1600px);
+
+    @media (any-hover: hover) {
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    }
+
+    & .icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+.burgerButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    display: none;
+
+    padding: 5px;
+    color: var(--white);
+
+    @media (any-hover: hover) {
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    @media (max-width: 1080px) {
+        display: flex;
+    }
+}
+.burger {
+    width: 40px;
+    height: 40px;
+}
+.content {
+    flex: 1 1 auto;
+    padding: 20px 0;
+    // overflow: auto;
+}
+.footer {
+    @media (max-width: 1080px) {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+.footerBody {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    flex-wrap: wrap;
+
+    @include mixins.fluid(padding-bottom, 15px, 20px, 390px, 1600px);
+    @include mixins.fluid(gap, 12px, 8px, 390px, 1600px);
+}
+.footerText {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 19px;
+}
+.footerRight {
+    display: flex;
+    gap: 12px;
+}
+.footerLink {
+    @media (any-hover: hover) {
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        &:hover {
+            color: var(--orange);
+        }
+    }
+}

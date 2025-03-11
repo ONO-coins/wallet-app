@@ -1,21 +1,35 @@
 {
-  "name": "electron-wallet",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.2.1"
-  },
-  "devDependencies": {
-    "eslint": "^9",
-    "eslint-config-next": "15.2.1",
-    "@eslint/eslintrc": "^3"
-  }
+    "name": "wallet-app",
+    "version": "0.1.0",
+    "private": true,
+    "main": "main/main.js",
+    "type": "module",
+    "author": "ONO",
+    "description": "ONO Wallet",
+    "scripts": {
+        "dev": "PORT=3050 concurrently -n \"NEXT,ELECTRON\" -c \"yellow,blue\" --kill-others \"next dev\" \"electron .\"",
+        "build": "next build && electron-builder",
+        "next-dev": "next dev --turbopack -p 3002",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "big.js": "^6.2.2",
+        "classnames": "^2.5.1",
+        "electron-serve": "^2.1.1",
+        "jwt-decode": "^4.0.0",
+        "next": "15.2.1",
+        "ono-web": "^1.0.3",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "sass": "^1.85.1"
+    },
+    "devDependencies": {
+        "@eslint/eslintrc": "^3",
+        "concurrently": "^9.1.2",
+        "electron": "^35.0.0",
+        "electron-builder": "^25.1.8",
+        "eslint": "^9",
+        "eslint-config-next": "15.2.1"
+    }
 }

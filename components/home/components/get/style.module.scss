@@ -1,0 +1,135 @@
+.get {
+    display: flex;
+    flex-direction: column;
+    grid-area: status;
+    justify-content: space-between;
+}
+.card {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(250px);
+    background: rgba(26, 26, 26, 0.35);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include mixins.fluid(padding-top, 28px, 16px, 390px, 1600px);
+    @include mixins.fluid(padding-bottom, 28px, 16px, 390px, 1600px);
+    @include mixins.fluid(padding-left, 28px, 14px, 390px, 1600px);
+    @include mixins.fluid(padding-right, 28px, 14px, 390px, 1600px);
+    @include mixins.fluid(border-radius, 16px, 12px, 390px, 1600px);
+    @include mixins.fluid(gap, 24px, 16px, 390px, 1600px);
+}
+.head {
+    grid-area: head;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+
+    @media (max-width: 992px) {
+        flex-direction: column;
+    }
+}
+.subtitle {
+    margin-bottom: 4px;
+}
+.headDesc {
+    color: var(--gray);
+    max-width: 460px;
+}
+.card1 {
+    grid-area: card1;
+}
+.card2 {
+    grid-area: card2;
+}
+.cardTitle {
+    display: flex;
+    gap: 12px;
+
+    & .typography.h3 {
+        font-weight: 400;
+    }
+}
+.icon {
+    @include mixins.fluid(max-width, 52px, 32px, 390px, 1600px);
+    @include mixins.fluid(max-height, 52px, 32px, 390px, 1600px);
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include mixins.fluid(gap, 20px, 12px, 390px, 1600px);
+}
+.field {
+    display: flex;
+    flex-direction: column;
+
+    @include mixins.fluid(gap, 8px, 4px, 390px, 1600px);
+}
+.button {
+    justify-content: center;
+    font-size: 14px;
+    max-width: 256px;
+    margin-top: 16px;
+
+    @media (any-hover: hover) {
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        &:hover {
+            background-color: var(--white);
+            border-color: var(--white);
+            color: var(--orange);
+        }
+    }
+
+    @media (max-width: 440px) {
+        max-width: 100%;
+    }
+
+    .buttonMb {
+        display: none;
+    }
+
+    @media (max-width: 992px) {
+        .buttonPc {
+            display: none;
+        }
+        .buttonMb {
+            display: block;
+        }
+    }
+
+    @media (max-width: 640px) {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+
+    @include mixins.fluid(gap, 19px, 8px, 390px, 1600px);
+}
+.item {
+    display: flex;
+    align-items: flex-start;
+
+    @include mixins.fluid(gap, 11px, 10px, 390px, 1600px);
+}
+.step {
+    color: var(--orange);
+    white-space: nowrap;
+    // @include mixins.fluid(width, 44px, 30px, 390px, 1600px);
+    @include mixins.fluid(font-size, 22px, 15px, 390px, 1600px);
+    @include mixins.fluid(line-height, 33px, 23px, 390px, 1600px);
+}
+.text {
+    color: rgba(208, 198, 190, 0.8);
+}
+.note {
+    color: #fef4ec;
+}

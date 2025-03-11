@@ -1,0 +1,146 @@
+.notfDropdown {
+  backdrop-filter: blur(250px);
+  background: rgba(26, 26, 26, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  position: absolute;
+  right: 0;
+  z-index: 5;
+  width: 100%;
+  max-width: 480px;
+  padding-bottom: 7px;
+  overflow: hidden;
+
+  transition: all 0.3s ease 0s;
+  pointer-events: none;
+  opacity: 0;
+  top: 95%;
+
+  &.active {
+    pointer-events: all;
+    opacity: 1;
+    top: 100%;
+  }
+}
+
+.title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+
+  @include mixins.fluid(padding-top, 24px, 16px, 390px, 1600px);
+  @include mixins.fluid(padding-left, 24px, 16px, 390px, 1600px);
+  @include mixins.fluid(padding-right, 24px, 16px, 390px, 1600px);
+  @include mixins.fluid(padding-bottom, 15px, 24px, 390px, 1600px);
+}
+.close {
+  position: absolute;
+  padding: 5px;
+  right: 20px;
+  top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+
+  @media (any-hover: hover) {
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+.list {
+  display: flex;
+  flex-direction: column;
+}
+.notf {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: transparent;
+
+  @media (any-hover: hover) {
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: #433e3b;
+
+      &::before {
+        background: transparent;
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    height: 1px;
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease 0s;
+    z-index: -1;
+  }
+
+  @include mixins.fluid(padding-left, 24px, 16px, 390px, 1600px);
+  @include mixins.fluid(padding-right, 24px, 16px, 390px, 1600px);
+  @include mixins.fluid(padding-top, 17px, 12px, 390px, 1600px);
+  @include mixins.fluid(padding-bottom, 17px, 12px, 390px, 1600px);
+
+  &.new {
+    &::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      position: absolute;
+      background-color: var(--orange);
+      top: 17px;
+      @include mixins.fluid(right, 24px, 16px, 390px, 1600px);
+    }
+  }
+}
+
+.notfIcon {
+  min-width: 32px;
+  min-height: 32px;
+  max-width: 32px;
+  max-height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+.notfInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.notfTitle {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+.notfText {
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}

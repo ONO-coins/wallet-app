@@ -1,0 +1,50 @@
+.body {
+    display: flex;
+    flex-direction: column;
+    @include mixins.fluid(gap, 24px, 16px, 390px, 1600px);
+}
+.title {
+    font-weight: 500;
+    font-size: 20px;
+}
+.field {
+    label {
+        font-size: 14px;
+        line-height: 19px;
+    }
+    input {
+        font-size: 14px;
+        line-height: 19px;
+        padding: 14px;
+        background-color: transparent;
+    }
+}
+.buttons {
+    display: flex;
+    gap: 12px;
+
+    @include mixins.fluid(gap, 12px, 8px, 390px, 1600px);
+
+    @media (max-width: 460px) {
+        flex-direction: column;
+    }
+}
+.button {
+    font-weight: 600;
+    font-size: 14px;
+    width: 100%;
+    justify-content: center;
+
+    @include mixins.fluid(gap, 14.5px, 12px, 390px, 1600px);
+}
+
+.addressContainer {
+    display: flex;
+    align-items: center;
+}
+
+.address {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 10px;
+}

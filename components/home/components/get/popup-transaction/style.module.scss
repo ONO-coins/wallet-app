@@ -1,0 +1,55 @@
+.popupInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.popupDesc {
+    color: var(--gray);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 150%;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+
+    @include mixins.fluid(gap, 21px, 28px, 390px, 1600px);
+}
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: flex-end;
+}
+.popupTitle {
+    color: var(--gray);
+    line-height: 129%;
+}
+.copy {
+    border-radius: 8px;
+    padding: 12px;
+}
+.amount {
+    display: flex;
+    gap: 12px;
+}
+.popupCode {
+    word-break: break-all;
+}
+.popupValue {
+    text-transform: none !important;
+}
+.link {
+    color: var(--orange);
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+        color: var(--white);
+    }
+}
+.infoIcon {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    cursor: pointer;
+}
