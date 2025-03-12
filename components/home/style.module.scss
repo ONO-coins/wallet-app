@@ -1,0 +1,28 @@
+.grid {
+    display: grid;
+    grid-template-columns: minmax(390px, 536px) minmax(390px, 536px) minmax(390px, 448px);
+    grid-template-areas:
+        'balance wallet transactions'
+        'transfer status transactions'
+        'transfer status transactions';
+
+    @include mixins.fluid(gap, 20px, 12px, 390px, 1600px);
+
+    @media (max-width: 1600px) {
+        grid-template-columns: minmax(390px, 1fr) minmax(390px, 1fr);
+        grid-template-areas:
+            'balance wallet'
+            'transfer status'
+            'transactions transactions';
+    }
+
+    @media (max-width: 840px) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            'balance'
+            'wallet'
+            'transfer'
+            'status'
+            'transactions';
+    }
+}

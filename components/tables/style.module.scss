@@ -1,0 +1,137 @@
+.list {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include mixins.fluid(margin-bottom, 24px, 16px, 390px, 1600px);
+}
+.title {
+    font-weight: 600;
+
+    @include mixins.fluid(font-size, 24px, 20px, 390px, 1600px);
+}
+.table {
+    width: 100%;
+    overflow: auto;
+    padding-bottom: 12px;
+
+    @media (hover: hover) {
+        &::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 20px;
+            background-color: var(--orange);
+        }
+    }
+}
+.tableBody {
+    min-width: 882px;
+    overflow: hidden;
+    display: flex;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    @media (max-width: 992px) {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px 10px 0 0;
+    }
+}
+.tableColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+
+    &.wAuto {
+        min-width: auto;
+        width: auto;
+    }
+
+    @media (max-width: 992px) {
+        &:not(:last-child) {
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    }
+}
+.tableHead {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include mixins.fluid(padding-bottom, 24px, 12px, 390px, 1600px);
+}
+.name {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+}
+.values {
+    display: flex;
+    flex-direction: column;
+}
+.value {
+    padding: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    @include mixins.fluid(padding-top, 12px, 6px, 390px, 1600px);
+    @include mixins.fluid(padding-bottom, 12px, 6px, 390px, 1600px);
+    @include mixins.fluid(height, 58px, 47px, 390px, 1600px);
+
+    &:nth-child(odd) {
+        background: rgba(255, 255, 255, 0.08);
+
+        @media (max-width: 992px) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    }
+}
+.pagination {
+    margin-top: 12px;
+}
+.viewDetail {
+    padding: 8px 16px;
+    gap: 8px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: none;
+    white-space: nowrap;
+}
+.search {
+    width: auto;
+
+    input {
+        padding-top: 11px;
+        padding-bottom: 11px;
+    }
+
+    @media (max-width: 992px) {
+        display: none;
+    }
+}
+.copyButton {
+    padding: 5px !important;
+    border: none;
+    margin-left: 5px;
+}
+.noTransactionContainer {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}

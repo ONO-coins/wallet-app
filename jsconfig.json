@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "paths": {
+            "@/*": ["./*"],
+            "@ui/*": ["./components/ui/*"],
+            "@icons/*": ["./components/icons/*"]
+        }
+    }
+}

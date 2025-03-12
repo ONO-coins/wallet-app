@@ -1,0 +1,145 @@
+.body{
+  display: flex;
+  flex-direction: column;
+
+  @include mixins.fluid(gap, 20px, 16px, 390px, 1600px);
+}
+.title{
+  font-weight: 600;
+
+  @include mixins.fluid(font-size, 26px, 20px, 390px, 1600px);
+  @include mixins.fluid(line-height, 32px, 30px, 390px, 1600px);
+
+  @media(max-width: 768px){
+    font-weight: 500;
+  }
+}
+
+.steps{
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.stepsCount{
+  font-weight: 500;
+  font-size: 14px;
+}
+.stepsLines{
+  display: flex;
+  gap: 5px;
+}
+.stepsLine{
+  border-radius: 1px;
+  height: 4px;
+  width: 100%;
+  background: #e2e2e2;
+
+  &.active{
+    background: #29ed5b;
+  }
+}
+.step{
+  display: flex;
+  flex-direction: column;
+}
+.stepTitle{
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 16px;
+
+  @include mixins.fluid(font-size, 20px, 16px, 390px, 1600px);
+
+  @media(max-width: 768px){
+    font-weight: 500;
+  }
+}
+.stepDesc{
+  font-weight: 400;
+  line-height: 137%;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 24px;
+
+  @include mixins.fluid(font-size, 16px, 14px, 390px, 1600px);
+}
+
+.stepSection{
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.stepCodes{
+  display: flex;
+  gap: 8px;
+
+  @media (max-width: 768px){
+    flex-direction: column;
+  }
+}
+.stepCode{
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  color: rgba(255, 255, 255, 0.7);
+
+  @media (max-width: 768px){
+
+    padding: 8px 0;
+
+    &:first-child{
+      padding-top: 0px
+    }
+
+    &:last-child{
+      padding-bottom: 0px
+    }
+
+    &:nth-child(even){
+      border-top: 2px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+.stepButtons{
+  display: flex;
+  gap: 8px;
+}
+.buttonIco{
+  width: 16px;
+  height: 16px;
+}
+.buttonCode{
+  padding: 8px 12px;
+  background: #5390f3;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+
+  @media(any-hover:hover){
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+    &:hover{
+      background-color: #2979FC
+    }
+  }
+}
+
+.buttons{
+  display: flex;
+  gap: 12px;
+
+}
+.button{
+  width: 100%;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  @include mixins.fluid(padding-top, 14.5px, 12.5px, 390px, 1600px);
+  @include mixins.fluid(padding-bottom, 14.5px, 12.5px, 390px, 1600px);
+
+}

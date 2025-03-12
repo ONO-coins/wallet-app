@@ -1,0 +1,73 @@
+.balance {
+    display: flex;
+    flex-direction: column;
+    grid-area: balance;
+}
+.head {
+    display: flex;
+    justify-content: space-between;
+
+    @include mixins.fluid(margin-bottom, 8px, 4px, 390px, 1600px);
+}
+.title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+}
+.commandIcon {
+    color: var(--orange);
+
+    @include mixins.fluid(max-width, 56px, 36px, 390px, 1600px);
+}
+.bottom {
+    display: flex;
+    flex-direction: column;
+    @include mixins.fluid(gap, 8px, 4px, 390px, 1600px);
+}
+.subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(255, 255, 255, 0.6);
+}
+.bottomRow {
+    display: flex;
+    align-items: flex-end;
+    column-gap: 16px;
+    flex-wrap: wrap;
+
+    @media (max-width: 440px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+.value {
+    font-weight: 500;
+
+    @include mixins.fluid(font-size, 36px, 26px, 390px, 1600px);
+    @include mixins.fluid(line-height, 54px, 39px, 390px, 1600px);
+}
+.subValue {
+    font-weight: 500;
+    text-align: right;
+    color: var(--orange);
+    opacity: 0.6;
+
+    @include mixins.fluid(font-size, 20px, 14px, 390px, 1600px);
+    @include mixins.fluid(line-height, 30px, 21px, 390px, 1600px);
+
+    @media (max-width: 768px) {
+        font-weight: 400;
+    }
+}
+.button {
+    justify-content: center;
+    margin-top: 12px;
+    display: none;
+
+    @include mixins.fluid(font-size, 17px, 14px, 390px, 1600px);
+
+    @media (max-width: 440px) {
+        display: flex;
+    }
+}

@@ -1,0 +1,215 @@
+.sidebar {
+    width: 100%;
+    min-width: 280px;
+    max-width: 280px;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(250px);
+    background: rgba(26, 26, 26, 0.38);
+    top: 0;
+    position: sticky;
+
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease 0s;
+    // overflow: hidden;
+
+    @include mixins.fluid(padding, 16px, 20px, 390px, 1600px);
+
+    @media (min-width: 1080px) {
+        &.full {
+            max-width: 88px;
+            min-width: 88px;
+
+            & .head {
+                padding: 0;
+
+                @include mixins.fluid(padding-top, 40px, 0px, 390px, 1600px);
+                @include mixins.fluid(padding-bottom, 40px, 20px, 390px, 1600px);
+            }
+
+            & .logo {
+                gap: 0;
+
+                span {
+                    max-width: 0;
+                    opacity: 0;
+                }
+            }
+
+            & .link,
+            .logOut {
+                gap: 0;
+                span {
+                    max-width: 0;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1080px) {
+        max-width: 300px;
+        position: fixed;
+        height: 100%;
+        left: 0;
+        transform: translateX(-100%);
+        top: 0;
+        transition: all 0.3s ease 0s;
+        z-index: 100;
+        backdrop-filter: blur(0px);
+        background: rgba(26, 26, 26, 1);
+
+        &.active {
+            transform: translateX(0);
+        }
+    }
+}
+.top {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+
+    @include mixins.fluid(gap, 40px, 20px, 390px, 1600px);
+}
+.head {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease 0s;
+
+    @include mixins.fluid(padding-top, 40px, 0px, 390px, 1600px);
+    @include mixins.fluid(padding-bottom, 40px, 20px, 390px, 1600px);
+    @include mixins.fluid(padding-left, 24px, 0px, 390px, 1600px);
+    @include mixins.fluid(padding-right, 24px, 0px, 390px, 1600px);
+}
+.logo {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    transition: all 0.3s ease 0s;
+
+    span {
+        display: inline-block;
+        font-weight: 400;
+        font-size: 24px;
+        transition: all 0.3s ease 0s;
+        overflow: hidden;
+        max-width: 100%;
+        white-space: nowrap;
+    }
+}
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.link,
+.logOut {
+    border-radius: 12px;
+    padding: 16px 18px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    gap: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease 0s;
+
+    span {
+        transition: all 0.3s ease 0s;
+        max-width: 100%;
+        // overflow: hidden;
+        white-space: nowrap;
+    }
+}
+
+.link {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: calc(100% + 8px);
+        border-radius: 12px 0 0 12px;
+        width: 10px;
+        height: 100%;
+        background-color: var(--orange);
+        transition: all 0.3s ease 0s;
+
+        opacity: 0;
+    }
+
+    @media (any-hover: hover) {
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        &:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+    }
+
+    &.active {
+        background-color: var(--orange);
+        color: var(--white);
+
+        &::after {
+            opacity: 1;
+        }
+    }
+}
+
+.logOut {
+    background: rgba(255, 255, 255, 0.05);
+    @media (any-hover: hover) {
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    }
+}
+
+.arrowButton {
+    position: absolute;
+    border-radius: 8px 0 0 8px;
+    width: 25px;
+    height: 46px;
+    background: rgba(255, 255, 255, 0.05);
+    opacity: 0.7;
+    right: 0;
+    top: 18px;
+    border-width: 1px 0 1px 1px;
+    border-color: transparent;
+    border-style: solid;
+    transition: all 0.3s ease 0s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--white);
+
+    @media (any-hover: hover) {
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        &:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    @media (min-width: 1080px) {
+        &.full {
+            transform: translateX(100%) scaleX(-1);
+        }
+    }
+}
+.backward {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}

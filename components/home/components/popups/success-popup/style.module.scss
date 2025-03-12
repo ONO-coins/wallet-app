@@ -1,0 +1,27 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+
+  @include mixins.fluid(padding, 24px, 0px, 390px, 1600px);
+}
+.indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 27px;
+  border-radius: 50%;
+  background-color: rgba(50, 229, 59, 0.1);
+}
+.icon {
+  width: 46px;
+  height: 46px;
+  color: #32e53b;
+}
+.text {
+  font-weight: 500;
+
+  @include mixins.fluid(font-size, 20px, 16px, 390px, 1600px);
+  @include mixins.fluid(line-height, 30px, 24px, 390px, 1600px);
+}
